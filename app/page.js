@@ -140,10 +140,7 @@ export default function PortfolioPage() {
                   </div>
                 </div>
                 
-                {/* Top-Right Kanji Symbol: 夜 (Night) */}
-                <div className="text-foreground-secondary/75 font-semibold text-lg">
-                  夜
-                </div>
+                
               </div>
               
               {/* Middle Content */}
