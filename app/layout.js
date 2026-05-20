@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Partha Pratim Dutta | Frontend Developer & UI Designer",
+  title: "Partha Pratim Dutta | Frontend Developer",
   description: "I create websites that work as hard as you do. Minimalist portfolio showcasing design systems, modern frontend development, and high-converting web experiences.",
 };
 

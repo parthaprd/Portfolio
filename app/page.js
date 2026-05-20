@@ -55,38 +55,38 @@ export default function PortfolioPage() {
   const techCategories = [
     {
       title: "Frontend",
-      skills: ["React", "Nextjs", "Shadcn", "SCSS", "Tailwindcss", "Framer-Motion", "Recoil", "Tanstack Query"]
+      skills: ["React", "Nextjs", "Shadcn", "Tailwindcss", "Framer-Motion"]
     },
     {
       title: "Backend",
-      skills: ["Nodejs", "Honojs", "Expressjs", "NPM"]
+      skills: ["Nodejs", "Expressjs"]
     },
     {
       title: "Db & Services",
-      skills: ["Cloudflare Workers", "Docker", "Appwrite", "Supabase", "Prisma ORM", "Postman", "Postgres", "MongoDB"]
+      skills: [ "Appwrite", "Supabase", "MongoDB"]
     },
     {
       title: "Currently Learning",
-      skills: ["Rust"]
+      skills: ["Redis"]
     }
   ]
 
   const projects = [
     {
       step: "PROJECT 1",
-      title: "Find the perfect component",
-      desc: "Every component is embedded live directly on the page, and you can even see what they look like at different breakpoints by dragging the slider on the right.",
+      title: "Petmate",
+      desc: "Pet Adoption site.",
       img: "/project-bg.png"
     },
     {
-      step: "PROJECT 2",
-      title: "Copy the snippet",
+      step: "Techwave",
+      title: "The podcast page",
       desc: "Click the \"Code\" tab to see the code for a component and grab the part that you need, or click the clipboard button to quickly copy the entire snippet in one step.",
       img: "/project-bg.png"
     },
     {
-      step: "PROJECT 3",
-      title: "Make it yours",
+      step: "Y Library",
+      title: "Library and book management",
       desc: "Every component is built entirely out of Tailwind utility classes, so you can easily dive in and adjust anything you want to better fit your use case.",
       img: "/project-bg.png"
     }
