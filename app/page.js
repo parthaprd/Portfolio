@@ -282,19 +282,19 @@ export default function PortfolioPage() {
         <section className="w-full px-6 py-16 flex flex-col items-center text-center gap-6 bg-palette-3/15">
           <div className="flex flex-col gap-2">
             <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white font-sans">
-              Need something different? <br className="md:hidden" /> Don't mind sharing
+              Am i suitable for your project? <br className="md:hidden" /> Don't mind sharing
             </h3>
             <p className="text-sm font-normal text-foreground-secondary max-w-sm">
-              Let us know if we are your fit, for your awesome exceptional work!
+              Let us know if i am your fit, for your awesome exceptional work!
             </p>
           </div>
           
           {/* Dynamic envelope card button */}
           <a
-            href="mailto:contact@sprrrint.com"
+            href="mailto:Parthapratimd16@gmail.com.com"
             className="w-full max-w-md bg-card border border-border hover:border-primary hover:shadow-low transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] py-4 px-6 rounded-[20px] flex items-center justify-center gap-3 font-semibold text-xs md:text-sm text-white group"
           >
-            <span>Send us Mail at contact@sprrrint.com</span>
+            <span>Mail at Parthapratimd16@gmail.com</span>
             <Mail className="w-5 h-5 text-foreground-secondary group-hover:text-primary transition-colors" />
           </a>
         </section>
