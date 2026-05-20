@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0b10;         /* Midnight black blueprint background canvas */
+  --foreground: #f9fafb;         /* Primary off-white typography */
+  --foreground-secondary: #94a3b8; /* Muted cool slate secondary typography */
+  --card: #12131a;               /* User's primary dark slate grey/blue card back */
+  --card-foreground: #f9fafb;
+  --border: #1f2937;             /* Thin blueprint border grid lines */
+  
+  --primary: #32bb78;            /* Glowing emerald-green accent highlight */
+  --primary-hover: #2ba267;
+  --secondary: #2ba267;          /* Accent dark hover state */
+  
+  /* Full Extracted Palette mapped to Dark Grid system */
+  --palette-1: #1f2937;
+  --palette-2: #12131a;
+  --palette-3: #0c0d12;
+  --palette-4: #191919;
+  --palette-5: #000000;
+  --palette-6: #1a2e26;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  
+  --color-palette-1: var(--palette-1);
+  --color-palette-2: var(--palette-2);
+  --color-palette-3: var(--palette-3);
+  --color-palette-4: var(--palette-4);
+  --color-palette-5: var(--palette-5);
+  --color-palette-6: var(--palette-6);
+  
+  --shadow-low: 0 4px 20px -2px rgba(0, 0, 0, 0.4), 0 2px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-high: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-sans); /* Use Inter for display & headings */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Subtle dark diagonal blueprint drafting stripes */
+.bg-blueprint-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 6px,
+    var(--border) 6px,
+    var(--border) 7.5px
+  );
+}
+
+/* Custom pulsing green dot using the glowing emerald #32bb78 */
+@keyframes breathing {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+    box-shadow: 0 0 0 0 rgba(50, 187, 120, 0.3);
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0 0 8px 2px rgba(50, 187, 120, 0.5);
+  }
+}
+
+.animate-breathing {
+  animation: breathing 2.5s infinite ease-in-out;
+}
+
+/* Smooth custom scrollbars in dark blueprint style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
 }
