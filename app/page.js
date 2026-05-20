@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react"
-import { motion } from "framer-motion"
 import { 
   Home, 
   PenTool, 
@@ -109,11 +108,6 @@ export default function PortfolioPage() {
         <div className="hidden md:block absolute top-0 bottom-0 left-[-56px] w-[56px] border-l border-r border-[#3b4b66] bg-blueprint-stripes opacity-70 pointer-events-none -z-10" />
         <div className="hidden md:block absolute top-0 bottom-0 right-[-56px] w-[56px] border-l border-r border-[#3b4b66] bg-blueprint-stripes opacity-70 pointer-events-none -z-10" />
 
-        {/* GRID SPACER HEADER: Drafting horizontal titlebar */}
-        <div className="w-full h-8 border-b border-border select-none bg-[#0c0d12]/45 flex items-center px-6">
-          <span className="font-mono text-[9px] text-foreground-secondary/40 tracking-wider">WORKSPACE / PORTFOLIO.GRID.SYSTEM.DARK</span>
-        </div>
-
         {/* SECTION 1: Friendly Profile Card Compartment */}
         <section className="w-full px-6 py-16 md:py-20 border-b border-border flex justify-center bg-transparent relative">
           <div className="w-full max-w-[650px] relative">
@@ -194,13 +188,7 @@ export default function PortfolioPage() {
 
         {/* SECTION 2: Flat Blueprint Tech Stack Row (Split Left/Right grid columns) */}
         <section className="w-full px-6 py-16 md:py-20 border-b border-border bg-transparent flex justify-center">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.99 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="w-full flex flex-col md:flex-row gap-12 md:gap-16 items-start"
-          >
+          <div className="w-full flex flex-col md:flex-row gap-12 md:gap-16 items-start">
             {/* Left Grid Side: Tech Stack header */}
             <div className="flex flex-col flex-shrink-0 select-none md:w-1/3">
               {/* Visual bracket indicator */}
@@ -225,19 +213,18 @@ export default function PortfolioPage() {
                   {/* Pills */}
                   <div className="flex flex-wrap gap-2.5">
                     {category.skills.map((skill, skillIdx) => (
-                      <motion.span 
+                      <span 
                         key={skillIdx}
-                        whileHover={{ scale: 1.03, borderColor: "var(--color-primary)", color: "var(--color-primary)" }}
-                        className="px-4 py-2 rounded-full bg-card border border-border text-foreground text-[11px] font-medium transition-all duration-200 cursor-default shadow-xs"
+                        className="px-4 py-2 rounded-full bg-card border border-border text-foreground text-[11px] font-medium transition-all duration-200 hover:scale-[1.03] hover:border-primary hover:text-primary cursor-default shadow-xs"
                       >
                         {skill}
-                      </motion.span>
+                      </span>
                     ))}
                   </div>
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </section>
 
         {/* SECTION 3: Flat Tailwind CSS-style Project Grid (Separated directly by thin border lines exactly like reference) */}
@@ -245,10 +232,7 @@ export default function PortfolioPage() {
           
           {/* Header compartment: Separated by a horizontal border line */}
           <div className="w-full px-8 py-14 border-b border-border select-none bg-transparent">
-            <span className="font-mono text-xs font-semibold text-primary uppercase tracking-widest">
-              UI BLOCKS / LIVE PREVIEW
-            </span>
-            <h2 className="text-3xl md:text-[2.6rem] font-bold text-white tracking-tight leading-[1.1] max-w-3xl mt-3 font-sans">
+            <h2 className="text-3xl md:text-[2.6rem] font-bold text-white tracking-tight leading-[1.1] max-w-3xl font-sans">
               Get a better idea of how my components work <br className="hidden md:inline" /> by exploring my live playground.
             </h2>
           </div>
@@ -306,15 +290,13 @@ export default function PortfolioPage() {
           </div>
           
           {/* Dynamic envelope card button */}
-          <motion.a
+          <a
             href="mailto:contact@sprrrint.com"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full max-w-md bg-card border border-border hover:border-primary hover:shadow-low transition-all duration-300 py-4 px-6 rounded-[20px] flex items-center justify-center gap-3 font-semibold text-xs md:text-sm text-white group"
+            className="w-full max-w-md bg-card border border-border hover:border-primary hover:shadow-low transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] py-4 px-6 rounded-[20px] flex items-center justify-center gap-3 font-semibold text-xs md:text-sm text-white group"
           >
             <span>Send us Mail at contact@sprrrint.com</span>
             <Mail className="w-5 h-5 text-foreground-secondary group-hover:text-primary transition-colors" />
-          </motion.a>
+          </a>
         </section>
 
       </main>
