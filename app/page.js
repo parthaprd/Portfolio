@@ -281,9 +281,6 @@ export default function PortfolioPage() {
             <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white font-sans">
               Am i suitable for your project? <br className="md:hidden" /> Don't mind sharing
             </h3>
-            <p className="text-sm font-normal text-foreground-secondary max-w-sm">
-              Let us know if i am your fit, for your awesome exceptional work!
-            </p>
           </div>
           
           {/* Dynamic envelope card button */}
