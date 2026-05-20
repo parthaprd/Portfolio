@@ -6,14 +6,14 @@
   --foreground-secondary: #94a3b8; /* Muted cool slate secondary typography */
   --card: #12131a;               /* User's primary dark slate grey/blue card back */
   --card-foreground: #f9fafb;
-  --border: #1f2937;             /* Thin blueprint border grid lines */
+  --border: #2c3545;             /* Sleek slate-grey blueprint border lines */
   
   --primary: #32bb78;            /* Glowing emerald-green accent highlight */
   --primary-hover: #2ba267;
   --secondary: #2ba267;          /* Accent dark hover state */
   
   /* Full Extracted Palette mapped to Dark Grid system */
-  --palette-1: #1f2937;
+  --palette-1: #2c3545;
   --palette-2: #12131a;
   --palette-3: #0c0d12;
   --palette-4: #191919;
@@ -60,11 +60,37 @@ body {
 .bg-blueprint-stripes {
   background-image: repeating-linear-gradient(
     -45deg,
-    transparent,
-    transparent 6px,
-    var(--border) 6px,
-    var(--border) 7.5px
+    transparent 0px,
+    transparent 10px,
+    rgba(148, 163, 184, 0.35) 10px,
+    rgba(148, 163, 184, 0.35) 12px
   );
+}
+
+/* Mathematically aligned 56px background grid pattern */
+.bg-grid-pattern {
+  background-size: 56px 56px;
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.16) 1px, transparent 1px);
+  background-position: center top;
+}
+
+/* Premium radial gradient spotlight that fades the grid gracefully towards edges */
+.bg-grid-spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1400px;
+  background: radial-gradient(
+    circle at 50% 320px,
+    transparent 0%,
+    rgba(10, 11, 16, 0.15) 35%,
+    rgba(10, 11, 16, 0.75) 70%,
+    var(--background) 100%
+  );
+  pointer-events: none;
 }
 
 /* Custom pulsing green dot using the glowing emerald #32bb78 */

@@ -96,20 +96,26 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen w-full bg-background relative flex flex-col items-center overflow-x-hidden">
       
-      {/* BACKGROUND DECORATION: Left and Right Absolute Blueprint Side Gutters in Dark Slate Stripes exactly like reference */}
-      <div className="hidden lg:block absolute top-0 bottom-0 left-[calc(50%-33.5rem)] w-12 border-l border-r border-border/85 bg-blueprint-stripes opacity-35 pointer-events-none -z-10" />
-      <div className="hidden lg:block absolute top-0 bottom-0 right-[calc(50%-33.5rem)] w-12 border-l border-r border-border/85 bg-blueprint-stripes opacity-35 pointer-events-none -z-10" />
-
-      {/* MAIN CONTAINER: Centered dark blueprint drafting grid column */}
-      <main className="flex-1 w-full max-w-4xl border-l border-r border-border flex flex-col bg-background relative text-foreground">
+      {/* 1. Spotlight highlight (lowest background overlay) */}
+      <div className="bg-grid-spotlight pointer-events-none -z-30" />
+      
+      {/* 2. Grid Pattern Overlay (crisp grid lines drawn on top of the spotlight glow) */}
+      <div className="absolute inset-0 bg-grid-pattern pointer-events-none -z-20" />
+      
+      {/* MAIN CONTAINER: Centered dark blueprint drafting grid column aligned to the 56px grid (896px = 16 cells) */}
+      <main className="flex-1 w-full max-w-[896px] border-l border-r border-border flex flex-col bg-[#0a0b10]/55 backdrop-blur-[1px] relative text-foreground">
         
+        {/* Left and Right Side Blueprint Stripe Gutters, positioned inside main to guarantee stretching to 100% of the scrollable height */}
+        <div className="hidden md:block absolute top-0 bottom-0 left-[-56px] w-[56px] border-l border-r border-[#3b4b66] bg-blueprint-stripes opacity-70 pointer-events-none -z-10" />
+        <div className="hidden md:block absolute top-0 bottom-0 right-[-56px] w-[56px] border-l border-r border-[#3b4b66] bg-blueprint-stripes opacity-70 pointer-events-none -z-10" />
+
         {/* GRID SPACER HEADER: Drafting horizontal titlebar */}
-        <div className="w-full h-8 border-b border-border select-none bg-palette-3/20 flex items-center px-6">
+        <div className="w-full h-8 border-b border-border select-none bg-[#0c0d12]/45 flex items-center px-6">
           <span className="font-mono text-[9px] text-foreground-secondary/40 tracking-wider">WORKSPACE / PORTFOLIO.GRID.SYSTEM.DARK</span>
         </div>
 
         {/* SECTION 1: Friendly Profile Card Compartment */}
-        <section className="w-full px-6 py-16 md:py-20 border-b border-border flex justify-center bg-background relative">
+        <section className="w-full px-6 py-16 md:py-20 border-b border-border flex justify-center bg-transparent relative">
           <div className="w-full max-w-[650px] relative">
             {/* Glowing background ambient emerald light */}
             <div className="absolute inset-0 bg-primary/5 rounded-[20px] blur-2xl transform translate-y-4 scale-95 -z-10" />
@@ -187,7 +193,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* SECTION 2: Flat Blueprint Tech Stack Row (Split Left/Right grid columns) */}
-        <section className="w-full px-6 py-16 md:py-20 border-b border-border bg-background flex justify-center">
+        <section className="w-full px-6 py-16 md:py-20 border-b border-border bg-transparent flex justify-center">
           <motion.div 
             initial={{ opacity: 0, scale: 0.99 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -235,10 +241,10 @@ export default function PortfolioPage() {
         </section>
 
         {/* SECTION 3: Flat Tailwind CSS-style Project Grid (Separated directly by thin border lines exactly like reference) */}
-        <section id="projects" className="w-full flex flex-col bg-background">
+        <section id="projects" className="w-full flex flex-col bg-transparent">
           
           {/* Header compartment: Separated by a horizontal border line */}
-          <div className="w-full px-8 py-14 border-b border-border select-none bg-background">
+          <div className="w-full px-8 py-14 border-b border-border select-none bg-transparent">
             <span className="font-mono text-xs font-semibold text-primary uppercase tracking-widest">
               UI BLOCKS / LIVE PREVIEW
             </span>
@@ -252,7 +258,7 @@ export default function PortfolioPage() {
             {projects.map((proj, idx) => (
               <div
                 key={idx}
-                className="p-8 flex flex-col flex-grow bg-background border-b last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 border-border transition-colors duration-200 hover:bg-[#12131a]/20"
+                className="p-8 flex flex-col flex-grow bg-transparent border-b last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 border-border transition-colors duration-200 hover:bg-[#12131a]/25"
               >
                 {/* Isometric flat thumbnail element */}
                 <div className="w-full aspect-video rounded-[10px] overflow-hidden mb-6 relative bg-palette-3 border border-border">
