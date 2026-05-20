@@ -3,9 +3,9 @@
 import React from "react"
 import { 
   Home, 
-  PenTool, 
   Mail, 
-  ArrowUpRight 
+  ArrowUpRight,
+  FileText
 } from "lucide-react"
 import { Dock, DockIcon } from "@/components/magicui/dock"
 
@@ -155,10 +155,16 @@ export default function PortfolioPage() {
               
               {/* Bottom Footer Row */}
               <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 pt-4 border-t border-border">
-                {/* Developer quote */}
-                <div className="font-mono text-[11px] leading-tight text-foreground-secondary/80 select-none">
-                  &ldquo;How do i center<br />a div again??&rdquo;
-                </div>
+                {/* Resume button */}
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-[10px] bg-white/5 hover:bg-white/10 text-white border border-border text-xs font-semibold tracking-wide transition-all flex items-center gap-2 active:scale-[0.98] select-none cursor-pointer"
+                >
+                  <FileText className="w-3.5 h-3.5 text-primary" />
+                  <span>Resume</span>
+                </a>
                 
                 {/* Status indicator & high-fidelity live clock */}
                 <div className="flex flex-col items-end gap-1.5">
@@ -228,9 +234,9 @@ export default function PortfolioPage() {
         <section id="projects" className="w-full flex flex-col bg-transparent">
           
           {/* Header compartment: Separated by a horizontal border line */}
-          <div className="w-full px-8 py-14 border-b border-border select-none bg-transparent">
-            <h2 className="text-3xl md:text-[2.6rem] font-bold text-white tracking-tight leading-[1.1] max-w-3xl font-sans">
-              Get a better idea of how my components work <br className="hidden md:inline" /> by exploring my live playground.
+          <div className="w-full px-8 py-12 border-b border-border select-none bg-transparent flex justify-start items-center">
+            <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase bg-gradient-to-r from-neutral-100 via-neutral-400 to-neutral-900 bg-clip-text text-transparent">
+              Projects
             </h2>
           </div>
           
@@ -276,7 +282,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* SECTION 4: CTA Contact / Footer Section */}
-        <section className="w-full px-6 py-16 flex flex-col items-center text-center gap-6 bg-palette-3/15">
+        <section className="w-full px-6 pt-16 pb-40 flex flex-col items-center text-center gap-6 bg-palette-3/15">
           <div className="flex flex-col gap-2">
             <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white font-sans">
               Am i suitable for your project? <br className="md:hidden" /> Don't mind sharing
@@ -285,7 +291,7 @@ export default function PortfolioPage() {
           
           {/* Dynamic envelope card button */}
           <a
-            href="mailto:Parthapratimd16@gmail.com.com"
+            href="mailto:Parthapratimd16@gmail.com"
             className="w-full max-w-md bg-card border border-border hover:border-primary hover:shadow-low transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] py-4 px-6 rounded-[20px] flex items-center justify-center gap-3 font-semibold text-xs md:text-sm text-white group"
           >
             <span>Mail at Parthapratimd16@gmail.com</span>
@@ -304,27 +310,27 @@ export default function PortfolioPage() {
             </a>
           </DockIcon>
           <DockIcon>
-            <a href="mailto:contact@sprrrint.com" className="text-foreground-secondary hover:text-primary transition-colors" title="Contact / Work">
-              <PenTool className="w-5 h-5" />
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-foreground-secondary hover:text-primary transition-colors" title="Resume">
+              <FileText className="w-5 h-5" />
             </a>
           </DockIcon>
           <DockIcon>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-foreground-secondary hover:text-primary transition-colors w-full h-full flex items-center justify-center" title="GitHub">
+            <a href="https://github.com/parthaprd/" target="_blank" rel="noopener noreferrer" className="text-foreground-secondary hover:text-primary transition-colors w-full h-full flex items-center justify-center" title="GitHub">
               <GithubIcon className="w-5 h-5" />
             </a>
           </DockIcon>
           <DockIcon>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-foreground-secondary hover:text-primary transition-colors w-full h-full flex items-center justify-center" title="LinkedIn">
+            <a href="https://www.linkedin.com/in/partha-pratim-dutta-3904aa306/" target="_blank" rel="noopener noreferrer" className="text-foreground-secondary hover:text-primary transition-colors w-full h-full flex items-center justify-center" title="LinkedIn">
               <LinkedinIcon className="w-5 h-5" />
             </a>
           </DockIcon>
           <DockIcon>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="text-foreground-secondary hover:text-primary transition-colors w-full h-full flex items-center justify-center" title="Twitter / X">
+            <a href="https://x.com/parthapd16" target="_blank" rel="noopener noreferrer" className="text-foreground-secondary hover:text-primary transition-colors w-full h-full flex items-center justify-center" title="Twitter / X">
               <TwitterXIcon className="w-5 h-5" />
             </a>
           </DockIcon>
           <DockIcon>
-            <a href="mailto:contact@sprrrint.com" className="text-foreground-secondary hover:text-primary transition-colors" title="Email">
+            <a href="mailto:Parthapratimd16@gmail.com" className="text-foreground-secondary hover:text-primary transition-colors" title="Email">
               <Mail className="w-5 h-5" />
             </a>
           </DockIcon>
