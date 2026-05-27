@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import Link from "next/link"
 import { 
   Home, 
   Mail, 
@@ -8,6 +9,7 @@ import {
   FileText
 } from "lucide-react"
 import { Dock, DockIcon } from "@/components/magicui/dock"
+import { projects } from "@/lib/projects"
 
 // Custom high-fidelity SVG brand icons in legibly contrasty colors
 const GithubIcon = (props) => (
@@ -68,27 +70,6 @@ export default function PortfolioPage() {
     {
       title: "Currently Learning",
       skills: ["Redis"]
-    }
-  ]
-
-  const projects = [
-    {
-      step: "PROJECT 1",
-      title: "Petmate",
-      desc: "Pet Adoption site.",
-      img: "/project-bg.png"
-    },
-    {
-      step: "Techwave",
-      title: "The podcast page",
-      desc: "Click the \"Code\" tab to see the code for a component and grab the part that you need, or click the clipboard button to quickly copy the entire snippet in one step.",
-      img: "/project-bg.png"
-    },
-    {
-      step: "Y Library",
-      title: "Library and book management",
-      desc: "Every component is built entirely out of Tailwind utility classes, so you can easily dive in and adjust anything you want to better fit your use case.",
-      img: "/project-bg.png"
     }
   ]
 
@@ -272,9 +253,12 @@ export default function PortfolioPage() {
                 </p>
                 
                 {/* Action button (rounded-[10px] in solid glowing green #32bb78) */}
-                <button className="w-full py-3 bg-primary hover:bg-[#2ba267] text-[#0a0b10] text-xs font-bold rounded-[10px] tracking-wide transition-colors shadow-low active:scale-[0.98]">
+                <Link
+                  href={`/projects/${proj.slug}`}
+                  className="block text-center w-full py-3 bg-primary hover:bg-[#2ba267] text-[#0a0b10] text-xs font-bold rounded-[10px] tracking-wide transition-colors shadow-low active:scale-[0.98]"
+                >
                   View Details
-                </button>
+                </Link>
               </div>
             ))}
           </div>
